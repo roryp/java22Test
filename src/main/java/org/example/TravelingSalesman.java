@@ -45,7 +45,7 @@ public class TravelingSalesman {
                 best.getKey(), best.getValue().totalDistance()));
     }
 
-    private static List<String> calculateRoute(String startCity, List<String> otherCities, Map<String, Map<String, Integer>> cities, Random random) {
+    public static List<String> calculateRoute(String startCity, List<String> otherCities, Map<String, Map<String, Integer>> cities, Random random) {
         List<String> route = new ArrayList<>();
         String currentCity = startCity;
         while (!otherCities.isEmpty()) {
@@ -59,7 +59,7 @@ public class TravelingSalesman {
         return route;
     }
 
-    private static int calculateTotalDistance(List<String> route, Map<String, Map<String, Integer>> cities) {
+    public static int calculateTotalDistance(List<String> route, Map<String, Map<String, Integer>> cities) {
         int totalDistance = 0;
         for (int i = 0; i < route.size() - 1; i++) {
             String currentCity = route.get(i);
@@ -69,7 +69,7 @@ public class TravelingSalesman {
         return totalDistance;
     }
 
-    private static String findRandomCity(List<String> cities, Random random) {
+    public static String findRandomCity(List<String> cities, Random random) {
         return cities.get(random.nextInt(cities.size()));
     }
 }
